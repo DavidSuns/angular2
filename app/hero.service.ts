@@ -6,4 +6,7 @@ export class HeroService {
   getHeroes() {
     return Promise.resolve(HEROES);
   }
+  getHero(id) {
+    return Promise.resolve(HEROES[id]);
+  }
 }
