@@ -17,7 +17,8 @@ var HeroService = (function () {
         return Promise.resolve(mock_heroes_1.HEROES);
     };
     HeroService.prototype.getHero = function (id) {
-        return Promise.resolve(mock_heroes_1.HEROES[id]);
+        return this.getHeroes()
+            .then(function (heroes) { return heroes.find(function (hero) { return hero.id === id; }); });
     };
     HeroService = __decorate([
         core_1.Injectable(), 
